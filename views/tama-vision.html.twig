@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>Your Tamagotchi!</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Tamagotchi: {{needs2[0].getName}}</h1>
+        <img src="/img/tama.gif"/>
+
+            <form>
+                <p>Food level: {{needs2[0].getFood}}
+                <button type='submit' class='btn-success' formaction='/food-button'>Feed!</button></p>
+
+                <p>Attention level: {{needs2[0].getAttention}}
+                <button type='submit' class='btn-success' formaction='/play-button'>Play!</button></p>
+
+                <p>Energy level: {{needs2[0].getRest}}
+                <button type='submit' class='btn-success' formaction='/sleep-button'>Nap!</button></p>
+
+                <p><button type='submit' class='btn-success' formaction='/time-button'>Time passing</button></p>
+
+                <p><button type='submit' class='btn-success' formaction='/reset'>Reset</button></p>
+            </form>
+    </div>
+</body>
+</html>
