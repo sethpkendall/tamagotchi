@@ -45,7 +45,12 @@
     $app->get("/time-button", function() use ($app) {
         $time = $_SESSION['needs'][0];
         $time->time();
-        return $app['twig']->render('tama-vision.html.twig', array('needs2' => Tamagotchi::getAll()));
+        if (($time->getFood()==0)||($time->getRest()==0)||($time->getAttention()==0)) {
+            return $app['twig']->render('dead-tama.html.twig', array('needs2' => Tamagotchi::getAll()));
+        } else {
+            return $app['twig']->render('tama-vision.html.twig', array('needs2' => Tamagotchi::getAll()));
+        }
+
     });
 
     $app->get("/reset", function() use ($app) {
